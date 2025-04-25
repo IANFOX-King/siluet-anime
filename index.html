@@ -1,41 +1,31 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Tebak Siluet Anime!</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <div class="container">
-    <h1 class="neon-title">Tebak Siluet Anime!</h1>
+  <h1 class="judul">Tebak Siluet Anime!</h1>
 
-    <div class="game-box">
-      <div class="image-container">
-        <img id="character-image" src="images/siluet1.png" alt="Siluet Karakter">
-      </div>
+  <div class="game-container">
+    <img id="imgSiluet" src="" alt="Siluet Karakter" class="siluet" />
 
-      <div class="input-section">
-        <input type="text" id="answer-input" placeholder="Tulis jawaban...">
-        <button id="submit-btn">Submit</button>
-      </div>
-
-      <div class="info-section">
-        <p id="feedback" class="neon-text"></p>
-        <p>Skor: <span id="score">0</span></p>
-        <p>Pertanyaan: <span id="question-number">1</span>/2</p>
-      </div>
-
-      <button id="next-btn" class="next-btn">Next Character</button>
+    <div class="form">
+      <input type="text" id="jawaban" placeholder="Tulis jawaban..." />
+      <button id="submit">Submit</button>
+      <p id="hasil"></p>
+      <p id="skor">Skor: 0</p>
+      <p id="pertanyaan">Pertanyaan: 1/1</p>
+      <button id="next">Next Character</button>
     </div>
   </div>
 
+  <footer>
+    <p>Created with love by <strong class="credit">Tuan Ian</strong></p>
+  </footer>
+
   <script src="script.js"></script>
-  <footer class="credit">
-  <p>Created with love by <span class="credit-name">Tuan Ian</span></p>
-</footer>
-  <div class="share-btn">
-  <a id="share-wa" target="_blank">Share ke WhatsApp</a>
-</div>
 </body>
 </html>
