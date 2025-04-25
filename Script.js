@@ -1,56 +1,49 @@
 const characters = [
-  { image: 'https://raw.githubusercontent.com/IANFOX-King/siluet-anime/main/images/BERU.png', answer: 'Beru' },
-  { image: 'https://raw.githubusercontent.com/IANFOX-King/siluet-anime/main/images/KOKUSHIBO.png', answer: 'Kokushibo' }
+  {
+    name: "Beru",
+    image: "https://raw.githubusercontent.com/IANFOX-King/siluet-anime/main/images/BERU.png"
+  }
 ];
 
 let currentIndex = 0;
-let score = 0;
+let skor = 0;
 
-const imageElement = document.getElementById('character-image');
-const answerInput = document.getElementById('answer-input');
-const feedback = document.getElementById('feedback');
-const scoreDisplay = document.getElementById('score');
-const questionNumber = document.getElementById('question-number');
-const waBtn = document.getElementById('share-wa');
-
-document.getElementById('submit-btn').addEventListener('click', checkAnswer);
-document.getElementById('next-btn').addEventListener('click', nextCharacter);
-
-function checkAnswer() {
-  const userAnswer = answerInput.value.trim().toLowerCase();
-  const correctAnswer = characters[currentIndex].answer.toLowerCase();
-
-  if (userAnswer === correctAnswer) {
-    feedback.textContent = 'Benar!';
-    score++;
-  } else {
-    feedback.textContent = `Salah! Jawaban: ${characters[currentIndex].answer}`;
-  }
-
-  scoreDisplay.textContent = score;
-  answerInput.value = '';
-  document.getElementById('submit-btn').disabled = true;
+function tampilkanKarakter() {
+  const karakter = characters[currentIndex];
+  document.getElementById("imgSiluet").src = karakter.image;
+  document.getElementById("pertanyaan").textContent = `Pertanyaan: ${currentIndex + 1}/${characters.length}`;
 }
 
-function nextCharacter() {
+function cekJawaban() {
+  const input = document.getElementById("jawaban").value.trim().toLowerCase();
+  const jawabanBenar = characters[currentIndex].name.toLowerCase();
+
+  if (input === jawabanBenar) {
+    skor++;
+    document.getElementById("hasil").textContent = "Benar, Tuan Ian!";
+  } else {
+    document.getElementById("hasil").textContent = `Salah! Jawaban: ${characters[currentIndex].name}`;
+  }
+
+  document.getElementById("skor").textContent = `Skor: ${skor}`;
+}
+
+function nextKarakter() {
   currentIndex++;
-  if (currentIndex < characters.length) {
-    updateGame();
-  } else {
-    feedback.textContent = `Game selesai! Skor akhir: ${score}/${characters.length}`;
-    document.querySelector('.input-section').style.display = 'none';
-    document.getElementById('next-btn').style.display = 'none';
+  if (currentIndex >= characters.length) {
+    alert(`Permainan selesai! Skor akhir Tuan Ian: ${skor}`);
+    currentIndex = 0;
+    skor = 0;
+    document.getElementById("skor").textContent = "Skor: 0";
+    document.getElementById("hasil").textContent = "";
   }
+  document.getElementById("jawaban").value = "";
+  tampilkanKarakter();
 }
 
-function updateGame() {
-  imageElement.src = characters[currentIndex].image;
-  questionNumber.textContent = currentIndex + 1;
-  feedback.textContent = '';
-  document.getElementById('submit-btn').disabled = false;
-}
+// Event listener tombol
+document.getElementById("submit").addEventListener("click", cekJawaban);
+document.getElementById("next").addEventListener("click", nextKarakter);
 
-updateGame();
-
-const gameURL = window.location.href;
-waBtn.href = `https://wa.me/?text=Coba%20main%20game%20Tebak%20Siluet%20Anime%20ini!%20Langsung%20main%20di%20${encodeURIComponent(gameURL)}`;
+// Tampilkan karakter pertama
+tampilkanKarakter();
