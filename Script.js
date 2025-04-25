@@ -1,6 +1,6 @@
 const characters = [
-  { image: 'images/siluet1.png', answer: 'Naruto' },
-  { image: 'images/siluet2.png', answer: 'Tanjiro' }
+  { image: 'https://ibb.co.com/k2CVMVsp', answer: 'Beru' },
+  { image: 'https://ibb.co.com/cSwqF9rJ', answer: 'Kokushibo' }
 ];
 
 let currentIndex = 0;
