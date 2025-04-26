@@ -1,7 +1,7 @@
 const characters = [
   {
     name: "Beru",
-    image: "https://i.ibb.co/0h4F6Mb/siluet-anime-1.png"
+    image: "https://ibb.co.com/fVMS0L3p"
   }
 ];
 
