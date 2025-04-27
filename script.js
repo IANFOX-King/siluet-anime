@@ -1,7 +1,7 @@
 const characters = [
   {
     name: "Beru",
-    image: "https://raw.githubusercontent.com/IANFOX-King/Siluet-anime/Images/BERU.png",
+    image: "https://github.com/IANFOX-King/siluet-anime/blob/9bdead7dbd17a43c2778cc660f0171f426ba7d55/Images/BERU.png",
     fullImage: "https://images.app.goo.gl/MUSF3PkVuS9Lz2A26"
   }
   // Mau nambah karakter lain tinggal tambah disini ya
