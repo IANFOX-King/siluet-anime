@@ -1,7 +1,7 @@
 const characters = [
   {
-    name: "Killua Zoldyck",
-    image: "https://ibb.co.com/Fkkj2byJ",
+    name: "Beru",
+    image: "https://raw.githubusercontent.com/IANFOX-King/Siluet-anime/Images/BERU.png",
     fullImage: "https://images.app.goo.gl/MUSF3PkVuS9Lz2A26"
   }
   // Mau nambah karakter lain tinggal tambah disini ya
