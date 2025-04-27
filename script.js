@@ -1,8 +1,8 @@
 const characters = [
   {
-    name: "abyss diablo",
-    image: "https://i.ibb.co/SvzKXYw/siluet-abyss.jpg",
-    fullImage: "https://i.ibb.co/m0MJnp4/abyss-full.jpg"
+    name: "Killua Zoldyck",
+    image: "https://ibb.co.com/Fkkj2byJ",
+    fullImage: "https://images.app.goo.gl/MUSF3PkVuS9Lz2A26"
   }
   // Mau nambah karakter lain tinggal tambah disini ya
 ];
