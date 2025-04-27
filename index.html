@@ -1,32 +1,38 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Tebak Siluet Anime</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Tebak Siluet Anime - by Ian</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <h1 class="judul">Tebak Siluet Anime!</h1>
 
-  <div class="game-container">
-    <img id="characterImage" src="" alt="Siluet Karakter" class="siluet" />
+  <div class="container">
+    <h1 class="judul">Tebak Siluet Karakter Anime</h1>
 
-    <div class="form">
-      <input type="text" id="jawaban" placeholder="Tulis jawaban..." />
+    <div class="gambar">
+      <img id="characterImage" src="" alt="Karakter" class="fade-in">
+    </div>
+
+    <div class="inputan">
+      <input type="text" id="jawaban" placeholder="Tebak Nama Karakter...">
       <button id="submit">Submit</button>
+    </div>
+
+    <div class="info">
       <p id="hasil"></p>
       <p id="skor">Skor: 0</p>
-      <p id="pertanyaan">Pertanyaan: 1/1</p>
+      <p id="pertanyaan"></p>
       <button id="next">Next Character</button>
     </div>
+
+    <footer>
+      <p>Credit by <a href="https://www.facebook.com/profile.php?id=100077377805039" target="_blank">Ian</a></p>
+    </footer>
   </div>
 
-  <footer>
-    <p>Created with love by <strong class="credit">Tuan Ian</strong></p>
-    <p><a href="https://facebook.com/USERNAME_FB_TUANIAN" target="_blank" class="fb-link">Follow Facebook Tuan Ian</a></p>
-  </footer>
-
   <script src="script.js"></script>
+
 </body>
 </html>
