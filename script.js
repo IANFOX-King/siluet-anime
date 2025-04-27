@@ -1,12 +1,15 @@
 const characters = [
   {
     name: "abyss diablo",
-    image: "https://i.ibb.co/SvzKXYw/siluet-abyss.jpg"
+    image: "https://i.ibb.co/SvzKXYw/siluet-abyss.jpg",
+    fullImage: "https://i.ibb.co/m0MJnp4/abyss-full.jpg"
   }
+  // Mau nambah karakter lain tinggal tambah disini ya
 ];
 
 let currentIndex = 0;
 let score = 0;
+let sudahJawab = false;
 
 const img = document.getElementById("characterImage");
 const input = document.getElementById("jawaban");
@@ -22,12 +25,16 @@ function tampilkanKarakter() {
   input.value = "";
   result.textContent = "";
   submit.disabled = false;
+  sudahJawab = false;
   pertanyaan.textContent = `Pertanyaan: ${currentIndex + 1}/${characters.length}`;
 }
 
 submit.addEventListener("click", () => {
+  if (sudahJawab) return;
+
   const jawaban = input.value.trim().toLowerCase();
   const benar = characters[currentIndex].name.toLowerCase();
+
   if (jawaban === benar) {
     score++;
     result.textContent = "Benar!";
@@ -35,7 +42,17 @@ submit.addEventListener("click", () => {
     result.textContent = `Salah! Jawaban: ${characters[currentIndex].name}`;
   }
   skorTeks.textContent = `Skor: ${score}`;
+
+  const karakter = characters[currentIndex];
+  img.src = karakter.fullImage;
+
+  // Kasih animasi fade-in
+  img.classList.remove("fade-in");
+  void img.offsetWidth; // Reset animasi
+  img.classList.add("fade-in");
+
   submit.disabled = true;
+  sudahJawab = true;
 });
 
 next.addEventListener("click", () => {
