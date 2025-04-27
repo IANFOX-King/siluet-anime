@@ -1,49 +1,52 @@
 const characters = [
   {
-    name: "Abbys",
+    name: "abyss diablo",
     image: "https://i.ibb.co/SvzKXYw/siluet-abyss.jpg"
   }
 ];
 
 let currentIndex = 0;
-let skor = 0;
+let score = 0;
+
+const img = document.getElementById("characterImage");
+const input = document.getElementById("jawaban");
+const result = document.getElementById("hasil");
+const skorTeks = document.getElementById("skor");
+const pertanyaan = document.getElementById("pertanyaan");
+const submit = document.getElementById("submit");
+const next = document.getElementById("next");
 
 function tampilkanKarakter() {
   const karakter = characters[currentIndex];
-  document.getElementById("imgSiluet").src = karakter.image;
-  document.getElementById("pertanyaan").textContent = `Pertanyaan: ${currentIndex + 1}/${characters.length}`;
+  img.src = karakter.image;
+  input.value = "";
+  result.textContent = "";
+  submit.disabled = false;
+  pertanyaan.textContent = `Pertanyaan: ${currentIndex + 1}/${characters.length}`;
 }
 
-function cekJawaban() {
-  const input = document.getElementById("jawaban").value.trim().toLowerCase();
-  const jawabanBenar = characters[currentIndex].name.toLowerCase();
-
-  if (input === jawabanBenar) {
-    skor++;
-    document.getElementById("hasil").textContent = "Benar, Tuan Ian!";
+submit.addEventListener("click", () => {
+  const jawaban = input.value.trim().toLowerCase();
+  const benar = characters[currentIndex].name.toLowerCase();
+  if (jawaban === benar) {
+    score++;
+    result.textContent = "Benar!";
   } else {
-    document.getElementById("hasil").textContent = `Salah! Jawaban: ${characters[currentIndex].name}`;
+    result.textContent = `Salah! Jawaban: ${characters[currentIndex].name}`;
   }
+  skorTeks.textContent = `Skor: ${score}`;
+  submit.disabled = true;
+});
 
-  document.getElementById("skor").textContent = `Skor: ${skor}`;
-}
-
-function nextKarakter() {
+next.addEventListener("click", () => {
   currentIndex++;
   if (currentIndex >= characters.length) {
-    alert(`Permainan selesai! Skor akhir Tuan Ian: ${skor}`);
+    alert(`Game selesai! Skor akhir: ${score}/${characters.length}`);
     currentIndex = 0;
-    skor = 0;
-    document.getElementById("skor").textContent = "Skor: 0";
-    document.getElementById("hasil").textContent = "";
+    score = 0;
+    skorTeks.textContent = "Skor: 0";
   }
-  document.getElementById("jawaban").value = "";
   tampilkanKarakter();
-}
+});
 
-// Event listener tombol
-document.getElementById("submit").addEventListener("click", cekJawaban);
-document.getElementById("next").addEventListener("click", nextKarakter);
-
-// Tampilkan karakter pertama
 tampilkanKarakter();
