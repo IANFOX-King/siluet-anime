@@ -1,66 +1,83 @@
 body {
-  background-color: #000;
-  color: #fff;
+  background-color: #0f0f0f;
+  color: white;
   font-family: 'Arial', sans-serif;
   text-align: center;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
   padding: 20px;
 }
 
 .judul {
-  font-size: 2.2em;
-  color: #ff0000;
-  text-shadow: 0 0 10px #ff0000;
+  font-size: 32px;
+  color: #ff0000; /* Warna neon merah */
+  text-shadow: 0 0 10px #ff0000, 0 0 20px #ff0000, 0 0 30px #ff0000;
   margin-bottom: 30px;
 }
 
-.game-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 20px;
-}
-
-.siluet {
-  width: 250px;
+.gambar img {
+  max-width: 300px;
   height: auto;
-  border: 3px solid white;
+  margin: 20px 0;
   border-radius: 10px;
 }
 
-.form input {
-  padding: 10px;
-  width: 200px;
-  border-radius: 8px;
-  border: none;
-  text-align: center;
+.inputan {
+  margin: 20px 0;
 }
 
-.form button {
-  background-color: #ff0000;
+input[type="text"] {
+  padding: 10px;
+  width: 60%;
   border: none;
-  color: white;
+  border-radius: 5px;
+}
+
+button {
   padding: 10px 20px;
-  border-radius: 8px;
-  margin: 5px;
+  margin-left: 10px;
+  background-color: #ff0000;
+  color: white;
+  border: none;
+  border-radius: 5px;
   cursor: pointer;
+}
+
+button:hover {
+  background-color: #cc0000;
+}
+
+.info {
+  margin-top: 20px;
 }
 
 footer {
   margin-top: 40px;
-  font-size: 0.9em;
-  color: #cccccc;
+  font-size: 14px;
 }
 
-.credit {
+footer a {
   color: #ff0000;
-  text-shadow: 0 0 5px #ff0000;
-}
-
-.fb-link {
-  color: #00acee;
   text-decoration: none;
 }
 
-.fb-link:hover {
+footer a:hover {
   text-decoration: underline;
+}
+
+/* Animasi Fade In */
+.fade-in {
+  animation: fadeIn 1s forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
